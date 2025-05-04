@@ -1,8 +1,14 @@
 package br.com.lojavirtual.database;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class InformacoesDoUsuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private Documentos documentos;
     private String nomeCompleto;

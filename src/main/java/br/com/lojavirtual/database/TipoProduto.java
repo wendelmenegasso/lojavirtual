@@ -1,6 +1,12 @@
 package br.com.lojavirtual.database;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class TipoProduto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String produto;
     private String descricao;

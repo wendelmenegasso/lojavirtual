@@ -1,6 +1,12 @@
 package br.com.lojavirtual.database;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Endereco {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String rua;
     private int numero;

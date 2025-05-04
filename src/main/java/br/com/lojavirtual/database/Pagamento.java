@@ -1,9 +1,15 @@
 package br.com.lojavirtual.database;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Pagamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private TipoDePagamento tipoDePagamento;
     private BigDecimal valor;
