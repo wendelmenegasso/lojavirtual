@@ -10,8 +10,14 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipoProduto_Produto", referencedColumnName = "id")
     private TipoProduto tipoProduto;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fabricante_Produto", referencedColumnName = "id")
     private Fabricante fabricante;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "modelo_Produto", referencedColumnName = "id")
     private Modelo modelo;
     private LocalDate dataDaCriacao;
     private LocalDate dataDaAlteracao;

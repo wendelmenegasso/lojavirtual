@@ -9,6 +9,8 @@ public class Modelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nomeDoModelo;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fabricante_Modelo", referencedColumnName = "id")
     private Fabricante fabricante;
 
     public long getId() {

@@ -13,7 +13,11 @@ public class InformacoesDoUsuario {
     private Documentos documentos;
     private String nomeCompleto;
     private LocalDate dataDeNascimento;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_InformacoesDoUsuario", referencedColumnName = "id")
     private Endereco endereco;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuarios_InformacoesDoUsuario", referencedColumnName = "id")
     private Usuarios usuarios;
 
     public long getId() {

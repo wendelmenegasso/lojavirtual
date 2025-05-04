@@ -11,6 +11,8 @@ public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipoDePagamento_Pagamento", referencedColumnName = "id")
     private TipoDePagamento tipoDePagamento;
     private BigDecimal valor;
     private LocalDate dataDoPagamento;

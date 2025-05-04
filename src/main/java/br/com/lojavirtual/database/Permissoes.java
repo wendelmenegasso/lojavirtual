@@ -8,7 +8,11 @@ public class Permissoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_Permissoes", referencedColumnName = "id")
     private Role role;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "subrole_Permissoes", referencedColumnName = "id")
     private  Subrole subrole;
 
     public long getId() {

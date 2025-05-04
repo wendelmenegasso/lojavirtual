@@ -10,6 +10,8 @@ public class Usuarios {
     private long id;
     private String nomeUsuario;
     private String senha;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_Usuarios", referencedColumnName = "id")
     private Role role;
 
     public long getId() {
